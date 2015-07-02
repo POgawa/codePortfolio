@@ -4,3 +4,18 @@
   <h3>Description of technology:</h3>
 
   -<em><%=@technology.description%></em>
+
+
+
+
+  <p>
+    <%= link_to 'Add a project', new_technology_project_path(@technology.id), :class => "btn btn-success" %>
+  </p>
+
+  <p>
+    <%= link_to 'Edit technology', edit_technology_path, :class => "btn btn-success" %>
+  </p>
+
+  <p>
+    <%= link_to 'Delete', technology_path(@technology), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+  </p>

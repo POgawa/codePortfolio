@@ -14,6 +14,10 @@ describe "adds a technology to the site" do
     fill_in 'Title', :with => 'Technology title'
     fill_in 'Description', :with => 'Technology description'
     click_on 'Create Technology'
-    expect(page).to have_content 'Technology title'
+    click_on 'Technology title'
+    click_on 'Edit technology'
+    fill_in 'Title', :with => 'new Technology title'
+    click_on "Update Technology"
+    expect(page).to have_content 'new Technology title'
   end
 end

@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   root to: 'technologies#index'
 
   devise_for :users, :except => [:show, :index]
-  resources :technologies
+  resources :technologies do
+    resources :projects, :except => [:show, :index]
+  end
   resources :users, :only => [:show, :index]
-  resources :projects
+  resources :projects, :only => [:show, :index]
   resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
