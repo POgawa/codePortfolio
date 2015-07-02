@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'technologies#index'
 
-  devise_for :users
+  devise_for :users, :except => [:show, :index]
   resources :technologies
-  resources :users
+  resources :users, :only => [:show, :index]
   resources :projects
   resources :comments
 
