@@ -1,0 +1,12 @@
+<h1>Technological Might</h1>
+
+
+
+
+<ul>
+  <% @technologies.each do |technology| %>
+  <li><%= link_to technology.title, technology_path(technology.id)%></li>
+
+  <hr>
+  <% end %>
+</ul>
