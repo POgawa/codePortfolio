@@ -1,7 +1,7 @@
-class TechnologiesController<ApplicationController
+class ProjectsController<ApplicationController
 
   def index
-    @technologies = Project.all
+    @projects = Project.all
   end
 
   def show
@@ -15,6 +15,7 @@ class TechnologiesController<ApplicationController
   def create
     if current_user
       @user = current_user
+      @technology = Technology.find(params[:id])
       @project = @user.technologies.new(technology_params)
       if @project.save
         redirect_to root_path
